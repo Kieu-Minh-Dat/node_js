@@ -1,13 +1,11 @@
-const express = require('express')
+const express = require('express');
 
-const router = express.Router()
+const router = express.Router();
 
+const sidecontrollers = require('../app/controllers/sidecontrollers');
 
-const sidecontrollers = require('../app/controllers/sidecontrollers')
+router.use('/search', sidecontrollers.search);
 
-router.use('/search',sidecontrollers.search )
+router.use('/', sidecontrollers.index);
 
-router.use('/',sidecontrollers.index )
-
-
-module.exports = router
+module.exports = router;
